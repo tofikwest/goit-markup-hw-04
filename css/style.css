@@ -2,13 +2,16 @@
   --all-titles-color: #212121;
   --navigation-text-color: #212121;
   --contact-us-font: #757575;
-  --primary-text-color: #212121;
+  /* --primary-text-color: #212121; */
+  --primary-text-color: #757575;
+
   --main-title-text-color: #ffffff;
   --main-title-backround: #2f303a;
   --accent-color: #2196f3;
   --background-buttons: #f5f4fa;
   --preference-table-color: #757575;
-  --team-background-color: #ffffff;
+  --team-background-color: #f5f4fa;
+  --team-card-disagn: #ffffff;
   --team-table-color: #757575;
   --footer-background-color: #2f303a;
   --footer-logo-color: #f5f4fa;
@@ -24,9 +27,15 @@
 
 body {
   color: var(--primary-text-color);
+
   font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
+
+  letter-spacing: 0.03em;
+  font-size: 16px;
+  line-height: 1.18;
 }
+
 /* Область для контента */
 
 .container {
@@ -35,13 +44,27 @@ body {
   padding-right: 15px;
   margin: 0 auto;
 }
+/* Пречет тэг */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 /* Сбрасывает стандартные настройки */
 
-.title,
-.all-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
   margin: 0;
-  padding: 0;
 }
 
 .list {
@@ -63,17 +86,15 @@ img {
   padding-top: 200px;
   padding-bottom: 200px;
 }
-.section-pos.preference {
-  padding-top: 94px;
-}
 
-.section-pos.projects,
-.section-pos.team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .section-pos.down-part {
   padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.section-pos {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /* Шапка */
@@ -91,10 +112,10 @@ img {
   display: flex;
   text-decoration: none;
   color: var(--navigation-text-color);
-  font-family: Raleway;
-  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
   font-size: 26px;
-  line-height: 1.19em;
+  line-height: 1.19;
 }
 
 .part-logo {
@@ -196,12 +217,16 @@ img {
 }
 
 /* Основной блок */
+.all-title {
+  color: var(--all-titles-color);
+}
 
 .main {
   /* height: 600px; */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+
   margin: 0 auto;
 
   background-color: var(--main-title-backround);
@@ -223,11 +248,10 @@ img {
 
   text-transform: uppercase;
 }
-.main .main-button {
-  display: inline-block;
-
+.main-button {
   background: var(--accent-color);
   padding: 10px 32px 10px 32px;
+
   min-width: 200px;
 
   color: var(--main-title-text-color);
@@ -253,6 +277,7 @@ img {
 }
 
 /* Преимущества */
+
 .preference .preference-title {
   text-align: center;
   margin-bottom: 35px;
@@ -261,10 +286,11 @@ img {
 .main-preference {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 
   margin-left: calc(-1 * var(--card-set-gap));
   margin-top: calc(-1 * var(--card-set-gap));
+
+  font-size: 14px;
 }
 
 .main-preference .item {
@@ -274,19 +300,19 @@ img {
   margin-top: var(--card-set-gap);
 }
 
-.preference .title {
-  padding-bottom: 10px;
+.main-preference .title {
+  margin-bottom: 10px;
 
   font-weight: bold;
   font-size: 14px;
 
-  line-height: 1.14em;
+  line-height: 1.14;
   letter-spacing: 0.03em;
 
   text-transform: uppercase;
 }
 
-.preference .table-of-contents {
+.main-preference .table-of-contents {
   color: var(--preference-table-color);
 
   font-size: 14px;
@@ -310,9 +336,9 @@ img {
   margin-top: var(--card-set-gap);
 }
 
-.projects .all-title {
+.projects .all-title,
+.team .all-title {
   margin-bottom: 50px;
-  color: var(--all-titles-color);
 
   font-weight: bold;
   font-size: 36px;
@@ -323,22 +349,18 @@ img {
   letter-spacing: 0.03em;
 }
 
-.projects .photo-box {
-  padding-bottom: 30px;
-}
-
 /* Команда */
 
 .main-team {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
   margin-left: calc(-1 * var(--card-set-gap));
   margin-top: calc(-1 * var(--card-set-gap));
 }
 
 .team-card-disagn {
-  background: var(--team-background-color);
+  background: var(--team-card-disagn);
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -348,11 +370,9 @@ img {
   flex-basis: calc(100% / 4 - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
-}
 
-/* .main-team .item:not(:last-child) {
-  margin-right: 30px;
-} */
+  padding-bottom: 30px;
+}
 
 .team {
   background-color: var(--team-background-color);
@@ -362,10 +382,8 @@ img {
   margin-bottom: 30px;
 }
 
-.team .all-title {
+/* .team .all-title {
   margin-bottom: 50px;
-
-  color: var(--all-titles-color);
 
   font-weight: bold;
   font-size: 36px;
@@ -374,14 +392,14 @@ img {
 
   line-height: 1.16em;
   letter-spacing: 0.03em;
-}
+} */
 
 .team .table {
-  color: var(--team-table-color);
+  /* color: var(--team-table-color); */
   text-align: center;
 
-  padding-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  /* padding-bottom: 30px; */
 
   font-size: 16px;
   line-height: 1.18em;
@@ -403,15 +421,14 @@ img {
 
 .down-part {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   background-color: var(--footer-background-color);
-  /* width: 1600px; */
+
   height: auto;
 }
 
 .down-part .logo {
   color: var(--footer-logo-color);
-  /* margin-top: 60px; */
 }
 
 .down-part .our-address {
@@ -450,9 +467,7 @@ img {
   letter-spacing: 0.02em;
   /* margin-left: 175px; */
 }
-.num-li-footer {
-  margin-bottom: 60px;
-}
+
 .pos-table-footer.our-address {
   margin-top: 20px;
 }
@@ -461,10 +476,6 @@ img {
 }
 
 /* Страница Портфолио */
-
-.section-pos.portfolio-page {
-  padding-top: 94px;
-}
 
 .portfolio-main-title {
   text-align: center;
@@ -477,6 +488,7 @@ img {
   color: var(--buttons-text-color);
   background-color: var(--background-buttons);
 
+  padding: 6px 22px;
   text-align: center;
 
   font-weight: 500;
@@ -537,7 +549,6 @@ img {
 
   margin-left: calc(-1 * var(--card-set-gap));
   margin-top: calc(-1 * var(--card-set-gap));
-  margin-bottom: 94px;
 }
 
 .card-set > .item {
@@ -545,8 +556,6 @@ img {
 
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
-
-  /* outline: 1px solid tomato; */
 }
 .project-card-disagn {
   padding: 20px 24px;
