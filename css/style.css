@@ -220,15 +220,11 @@ img {
 }
 
 .main {
-  /* height: 600px; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-
   margin: 0 auto;
 
   background-color: var(--main-title-backround);
-
+  background-image: url("../images/main-section/bg-opt.jpeg");
+  background-position: center;
   text-align: center;
 }
 .main-title {
