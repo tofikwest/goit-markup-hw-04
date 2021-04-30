@@ -2,7 +2,9 @@
   --all-titles-color: #212121;
   --navigation-text-color: #212121;
   --contact-us-font: #757575;
+  /* --primary-text-color: #212121; */
   --primary-text-color: #757575;
+
   --main-title-text-color: #ffffff;
   --main-title-backround: #2f303a;
   --accent-color: #2196f3;
@@ -220,11 +222,15 @@ img {
 }
 
 .main {
+  /* height: 600px; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
   margin: 0 auto;
 
   background-color: var(--main-title-backround);
-  background-image: url("../images/main-section/bg-opt.jpeg");
-  background-position: center;
+
   text-align: center;
 }
 .main-title {
