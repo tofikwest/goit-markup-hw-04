@@ -2,6 +2,7 @@
   --all-titles-color: #212121;
   --navigation-text-color: #212121;
   --contact-us-font: #757575;
+  --contact-us-icon-color: #757575;
   /* --primary-text-color: #212121; */
   --primary-text-color: #757575;
 
@@ -16,6 +17,8 @@
   --footer-background-color: #2f303a;
   --footer-logo-color: #f5f4fa;
   --footer-our-address-color: #ffffff;
+  --join-title-text-color: #ffffff;
+  --join-icon-logo-color: #ffffff;
   --buttons-text-color: #212121;
   --portfolio-table-color: #757575;
   --portfolio-button-active: #ffffff;
@@ -177,25 +180,26 @@ img {
 
   align-items: center;
 }
-.icon-mail {
+.icon-mail,
+.icon-phone {
   /* display: inline-block; */
   width: 16px;
   height: 12px;
   margin-right: 10px;
-}
-.icon-phone {
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
+  fill: var(--contact-us-icon-color);
 }
 
-.contact-us .email:hover {
-  color: var(--accent-color);
-}
 .contact-us .email:hover,
 .contact-us .email:focus,
 .contact-us .number:hover,
 .contact-us .number:focus {
+  color: var(--accent-color);
+}
+
+.contact-us .email:hover .icon-mail,
+.contact-us .email:focus .icon-mail,
+.contact-us .number:hover .icon-phone,
+.contact-us .number:focus .icon-phone {
   fill: var(--accent-color);
 }
 
@@ -213,11 +217,6 @@ img {
 
   line-height: 1.14em;
   letter-spacing: 0.02em;
-}
-
-.contact-us .number:hover,
-.number:focus {
-  color: #2196f3;
 }
 
 .site-nav .link {
@@ -546,7 +545,7 @@ img {
 
 .down-part {
   display: flex;
-  /* align-items: center; */
+  /* justify-content: center; */
   background-color: var(--footer-background-color);
 
   height: auto;
@@ -598,6 +597,58 @@ img {
 }
 .pos-table-footer {
   margin-top: 9px;
+}
+.join-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.down-part .container {
+  display: flex;
+}
+.footer-left-content {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 70px;
+}
+
+.join {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.join-title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--join-title-text-color);
+}
+
+.join-list {
+  display: flex;
+}
+
+.join-icon-logo {
+  width: 20px;
+  height: 20px;
+
+  fill: var(--join-icon-logo-color);
+}
+.join-icon:hover {
+  background: #2196f3;
 }
 
 /* Страница Портфолио */
@@ -681,6 +732,13 @@ img {
 
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
+}
+.card-set .item:hover,
+.card-set .item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
 }
 .project-card-disagn {
   padding: 20px 24px;
