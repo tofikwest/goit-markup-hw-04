@@ -740,7 +740,8 @@ img {
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
 }
-.card-set .item:hover {
+.card-set .item:hover,
+.card-set .card-focus:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
