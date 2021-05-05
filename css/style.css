@@ -518,12 +518,11 @@ img {
   margin-left: 30px;
   margin-top: 50px;
 }
-.item .thumb {
-  display: flex;
 
+.clients-link-logo {
+  display: flex;
   justify-content: center;
   align-items: center;
-
   border: 1px solid #afb1b8;
   border-radius: 4px;
   width: 170px;
@@ -536,14 +535,13 @@ img {
 
   cursor: pointer;
 }
-.item .thumb:hover .clients-logo,
-.logo-focus:focus .clients-logo {
-  /*  */
+.clients-link-logo:hover .clients-logo,
+.clients-link-logo:focus .clients-logo {
   fill: var(--accent-color);
 }
-.item .thumb:hover {
-  border: 1px solid #2196f3;
-  border-radius: 4px;
+.clients-link-logo:hover,
+.clients-link-logo:focus {
+  border: 1px solid #188ce8;
 }
 
 
